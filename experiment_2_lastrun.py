@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Sat Mar  2 20:38:32 2019
+    on Sun Mar  3 14:28:11 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -28,7 +28,7 @@ os.chdir(_thisDir)
 
 # Store info about the experiment session
 psychopyVersion = '3.0.5'
-expName = 'experiment_1'  # from the Builder filename that created this script
+expName = 'experiment_2'  # from the Builder filename that created this script
 expInfo = {'participant': '', 'session': '001'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
@@ -43,7 +43,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expNa
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/paulpierzchlewicz/Documents/BrainHack/experiment_setup/experiment_1_lastrun.py',
+    originPath='/Users/paulpierzchlewicz/Documents/BrainHack/experiment_setup/experiment_2_lastrun.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -135,6 +135,16 @@ diode = visual.Rect(
     lineWidth=1, lineColor=[1,1,1], lineColorSpace='rgb',
     fillColor=[1,1,1], fillColorSpace='rgb',
     opacity=1, depth=-2.0, interpolate=True)
+
+# Initialize components for Routine "end"
+endClock = core.Clock()
+thanks = visual.TextStim(win=win, name='thanks',
+    text='Calibration done!\nThanks!',
+    font='Arial',
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
 
 # Create some handy timers
 globalClock = core.Clock()  # to track the time since experiment started
@@ -395,10 +405,10 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_2 = data.TrialHandler(nReps=40, method='fullRandom', 
+trials_2 = data.TrialHandler(nReps=3, method='fullRandom', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('trials.csv'),
-    seed=None, name='trials_2')
+    seed=10, name='trials_2')
 thisExp.addLoop(trials_2)  # add the loop to the experiment
 thisTrial_2 = trials_2.trialList[0]  # so we can initialise stimuli with some values
 # abbreviate parameter names if possible (e.g. rgb = thisTrial_2.rgb)
@@ -487,8 +497,58 @@ for thisTrial_2 in trials_2:
             thisComponent.setAutoDraw(False)
     thisExp.nextEntry()
     
-# completed 40 repeats of 'trials_2'
+# completed 3 repeats of 'trials_2'
 
+
+# ------Prepare to start Routine "end"-------
+t = 0
+endClock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+# keep track of which components have finished
+endComponents = [thanks]
+for thisComponent in endComponents:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "end"-------
+while continueRoutine:
+    # get current time
+    t = endClock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *thanks* updates
+    if t >= 0.0 and thanks.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        thanks.tStart = t
+        thanks.frameNStart = frameN  # exact frame index
+        thanks.setAutoDraw(True)
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in endComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "end"-------
+for thisComponent in endComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# the Routine "end" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
 # these shouldn't be strictly necessary (should auto-save)
 thisExp.saveAsWideText(filename+'.csv')
 thisExp.saveAsPickle(filename)

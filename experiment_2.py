@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Sat Mar  2 20:38:32 2019
+    on Sun Mar  3 10:12:42 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -28,7 +28,7 @@ os.chdir(_thisDir)
 
 # Store info about the experiment session
 psychopyVersion = '3.0.5'
-expName = 'experiment_1'  # from the Builder filename that created this script
+expName = 'experiment_2'  # from the Builder filename that created this script
 expInfo = {'participant': '', 'session': '001'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
@@ -43,7 +43,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expNa
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/paulpierzchlewicz/Documents/BrainHack/experiment_setup/experiment_1_lastrun.py',
+    originPath='/Users/paulpierzchlewicz/Documents/BrainHack/experiment_setup/experiment_2.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -395,7 +395,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_2 = data.TrialHandler(nReps=40, method='fullRandom', 
+trials_2 = data.TrialHandler(nReps=3, method='fullRandom', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('trials.csv'),
     seed=None, name='trials_2')
@@ -487,7 +487,7 @@ for thisTrial_2 in trials_2:
             thisComponent.setAutoDraw(False)
     thisExp.nextEntry()
     
-# completed 40 repeats of 'trials_2'
+# completed 3 repeats of 'trials_2'
 
 # these shouldn't be strictly necessary (should auto-save)
 thisExp.saveAsWideText(filename+'.csv')
